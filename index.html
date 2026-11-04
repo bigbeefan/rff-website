@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RFF 26/27 — Real Fantasy Football</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">⚽</span>
+        <div class="logo-text">
+          <h1>RFF</h1>
+          <span class="season-badge">26/27</span>
+        </div>
+      </div>
+      <nav class="main-nav" id="mainNav">
+        <button class="nav-btn active" data-view="table">Table</button>
+        <button class="nav-btn" data-view="fixtures">Fixtures</button>
+        <button class="nav-btn" data-view="squads">Squads</button>
+        <button class="nav-btn" data-view="scorers">Top Scorers</button>
+        <button class="nav-btn" data-view="cup">MMH Cup</button>
+        <button class="nav-btn" data-view="gazette">Gazette</button>
+      </nav>
+      <div class="header-meta">
+        <span class="live-dot"></span>
+        <span class="gameweek-label">Gameweek 12</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="content" id="content">
+
+    <!-- LEAGUE TABLE -->
+    <section class="view active" id="view-table">
+      <div class="section-header">
+        <h2>League Standings</h2>
+        <p class="subtitle">After 11 matches played</p>
+      </div>
+      <div class="table-wrapper">
+        <table class="league-table" id="leagueTable">
+          <thead>
+            <tr>
+              <th class="col-pos">#</th>
+              <th class="col-club">Club</th>
+              <th class="col-stat">PL</th>
+              <th class="col-stat">W</th>
+              <th class="col-stat">D</th>
+              <th class="col-stat">L</th>
+              <th class="col-stat hide-mobile">F</th>
+              <th class="col-stat hide-mobile">A</th>
+              <th class="col-stat">GD</th>
+              <th class="col-pts">PTS</th>
+              <th class="col-form hide-mobile">Form</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- FIXTURES -->
+    <section class="view" id="view-fixtures">
+      <div class="section-header">
+        <h2>Fixtures & Results</h2>
+        <div class="gw-selector" id="gwSelector"></div>
+      </div>
+      <div class="fixtures-grid" id="fixturesGrid"></div>
+    </section>
+
+    <!-- SQUADS -->
+    <section class="view" id="view-squads">
+      <div class="section-header">
+        <h2>Draft Squads</h2>
+        <p class="subtitle">8-round snake draft</p>
+      </div>
+      <div class="squads-grid" id="squadsGrid"></div>
+    </section>
+
+    <!-- TOP SCORERS -->
+    <section class="view" id="view-scorers">
+      <div class="section-header">
+        <h2>Top Scorers</h2>
+        <p class="subtitle">Master player list — goals from starts only</p>
+      </div>
+      <div id="scorersGrid"></div>
+    </section>
+
+    <!-- MMH CUP -->
+    <section class="view" id="view-cup">
+      <div class="section-header">
+        <h2>MMH Cup</h2>
+        <p class="subtitle">Last man standing — eliminated if none of your 8 players score</p>
+      </div>
+      <div class="cup-bracket" id="cupBracket"></div>
+    </section>
+
+    <!-- GAZETTE -->
+    <section class="view" id="view-gazette">
+      <div class="section-header">
+        <h2>The RFF Gazette</h2>
+        <p class="subtitle">Weekly league round-ups</p>
+      </div>
+      <div class="gazette-list" id="gazetteList"></div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>RFF 26/27 &middot; Real Fantasy Football</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
