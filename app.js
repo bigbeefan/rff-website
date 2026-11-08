@@ -137,7 +137,7 @@ let teamSet = new Set();
 // ── Fallback cup data (can't parse colours from API) ──
 // MMH Cup: last-man-standing — eliminated if none of your 8 players score
 const FALLBACK_CUP = {
-  totalWeeks: 10,
+  totalWeeks: 12,
   teams: [
     { name: 'AC MilAnthony', eliminatedWeek: null },
     { name: 'Inter MilAndy', eliminatedWeek: null },
@@ -251,6 +251,10 @@ function setStatus(msg) {
 function renderTable() {
   const tbody = document.getElementById('tableBody');
   const totalTeams = DATA.table.length;
+  const maxPl = Math.max(...DATA.table.map(t => t.pl), 0);
+  const subtitle = document.querySelector('#view-table .subtitle');
+  if (subtitle && maxPl > 0) subtitle.textContent = `After ${maxPl} matches played`;
+
   tbody.innerHTML = DATA.table.map(t => {
     const posClass = t.pos <= 1 ? 'top' : t.pos >= totalTeams ? 'bottom' : '';
     const gdClass = t.gd > 0 ? 'gd-positive' : t.gd < 0 ? 'gd-negative' : 'gd-zero';
